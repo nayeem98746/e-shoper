@@ -12,5 +12,5 @@ function Home() {
       <ItemContainer/>
     </div>
   );
-
+  }
 export default Home;
