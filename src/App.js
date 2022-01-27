@@ -7,6 +7,7 @@ import Header from './Component/Home/Shared/Header/Header';
 import Navber from './Component/Home/Shared/Navber/Navber';
 import Home from './Component/Home/Home/Home';
 import Login from './Component/Login/Login';
+import Register from './Component/Register/Register';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Home></Home>} />
         <Route path="/home" element={<Home></Home>} />
         <Route path="/login" element={<Login></Login>} />
+        <Route path="/register" element={<Register></Register>} />
        
        
       </Routes>
