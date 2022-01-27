@@ -7,12 +7,15 @@ import './Header.css'
 import logo from '../../../../Images/logo (1).png'
 import { Link } from 'react-router-dom';
 import { NavLink } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
 
 function Header() {
     const element = <FontAwesomeIcon icon={faShoppingCart} />
     const hart = <FontAwesomeIcon icon={faHardHat} />
     const user =<FontAwesomeIcon icon={faUserCircle} />
     const search =<FontAwesomeIcon icon={faSearch} />
+    const cartLength = useSelector( state => state.products.cartProduct)
+    console.log(cartLength.length);
 
   return <div className='header'>
       <nav className='nav'>
@@ -27,7 +30,7 @@ function Header() {
           <div className='d-flex'>
                 <NavLink className='a-style' as={Link} to="/">Shop</NavLink>
                 <NavLink className='a-style' style={{color:'black'}} as={Link} to="/login">{user}</NavLink>
-                <NavLink className='a-style' as={Link} to="/">{element}</NavLink>
+                <NavLink className='a-style' as={Link} to="/">{element}{cartLength.length}</NavLink>
             </div>
           
       </nav>

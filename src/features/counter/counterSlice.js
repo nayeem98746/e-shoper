@@ -14,6 +14,7 @@ const productSlice = createSlice({
   initialState:{
     allProducts: [],
     displayProducts:[],
+    cartProduct:[],
     productCategory:'Man',
     isLoading: true
   },
@@ -29,6 +30,9 @@ const productSlice = createSlice({
       const categoryProducts = state.allProducts.filter( p => p.catagory === state.productCategory)
       state.displayProducts = categoryProducts;
     },
+    setProductToCart:(state,action)=>{
+      state.cartProduct.push(action.payload)
+    }
 
   },
   extraReducers: ( builder ) =>{
@@ -38,5 +42,5 @@ const productSlice = createSlice({
     })
   }
 })
-export const { setDisplayProduct, setProductsCategory } = productSlice.actions;
+export const { setDisplayProduct, setProductsCategory, setProductToCart } = productSlice.actions;
 export default productSlice.reducer;
