@@ -2,7 +2,6 @@ import './App.css';
 import {  BrowserRouter as Router, Route, Routes  } from "react-router-dom";
 import * as React from "react";
 
-
 import Header from './Component/Home/Shared/Header/Header';
 import Navber from './Component/Home/Shared/Navber/Navber';
 import Home from './Component/Home/Home/Home';
@@ -10,7 +9,7 @@ import Login from './Component/Login/Login';
 
 function App() {
   return (
-    <div className="App">
+    <div>
      <Router>
        <Header></Header>
        <Navber></Navber>

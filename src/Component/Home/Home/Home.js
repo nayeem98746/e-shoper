@@ -1,7 +1,16 @@
 import React from 'react';
+import CategoryBanner from './CategoryBanner/CategoryBanner';
+import ItemContainer from './ItemContainer/ItemContainer';
+import TopBanner from './TopBanner/TopBanner';
 
 function Home() {
-  return <div><h2>this is home </h2></div>;
-}
+
+  return (
+    <div>
+      <TopBanner/>
+      <CategoryBanner/>
+      <ItemContainer/>
+    </div>
+  );
 
 export default Home;

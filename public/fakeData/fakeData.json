@@ -1,0 +1,164 @@
+[
+    {
+        "id":1,
+        "name":"Man Shirt",
+        "catagory":"Man",
+        "price":30,
+        "image":"https://i.ibb.co/HG7NW5y/Man-Shirt.jpg",
+        "description":"Man Shirt Collection"
+    }
+    ,
+    
+    {
+        "id":2,
+        "name":"Man TShirt",
+        "catagory":"Man",
+        "price":10,
+        "image":"https://i.ibb.co/XWdnVp6/man-Tshart.jpg",
+        "description":"Man TShirt Collection"
+    }
+    ,
+    {
+        "id":3,
+        "name":"Man Pant",
+        "catagory":"Man",
+        "price":30,
+        "image":"https://i.ibb.co/9hRJdv4/ManPants.jpg",
+        "description":"Man Pant Collection"
+    }
+    ,
+    {
+        "id":4,
+        "name":"Man Watch",
+        "catagory":"Man",
+        "price":30,
+        "image":"https://i.ibb.co/TLphjZh/T065-407-11-051-00.jpg",
+        "description":"Man Watch Collection"
+    }
+    ,
+    {
+        "id":5,
+        "name":"Man Sunglas",
+        "catagory":"Man",
+        "price":30,
+        "image":"https://i.ibb.co/64jPC0f/man-Sunglass.jpg",
+        "description":"Man Sunglas Collection"
+    }
+    ,
+    {
+        "id":6,
+        "name":"Man show",
+        "catagory":"Man",
+        "price":50,
+        "image":"https://i.ibb.co/wN9mH1v/ManShow1.jpg",
+        "description":"Man show Collection"
+    }
+    ,
+    {
+        "id":7,
+        "name":"Woman collection",
+        "catagory":"Woman",
+        "price":30,
+        "image":"https://i.ibb.co/5RgPxsv/p14.jpg",
+        "description":"Woman Hot collection "
+    }
+    ,
+    {
+        "id":8,
+        "name":"Woman Collection2",
+        "catagory":"Woman",
+        "price":10,
+        "image":"https://i.ibb.co/0r4py5h/woman-Collection.jpg",
+        "description":"Woman Summer Collection"
+    }
+    ,
+    {
+        "id":9,
+        "name":"Woman Pant collection",
+        "catagory":"Woman",
+        "price":40,
+        "image":"https://i.ibb.co/Snk7Yfg/womanpants.jpg",
+        "description":"Regular Fit Trouser Pant"
+    }
+    ,
+    {
+        "id":10,
+        "name":"Woman Watch",
+        "catagory":"Woman",
+        "price":50,
+        "image":"https://i.ibb.co/vcqGpRg/33.jpg",
+        "description":"Woman Watch COllection"
+    }
+    ,
+    {
+        "id":11,
+        "name":"woman black Sunglas",
+        "catagory":"Woman",
+        "price":10,
+        "image":"https://i.ibb.co/16qcVP9/p16.jpg",
+        "description":"woman black Sunglas Collection"
+    }
+    ,
+    {
+        "id":12,
+        "name":"woman  show",
+        "catagory":"Woman",
+        "price":50,
+        "image":"https://i.ibb.co/7nPyTmj/womanshow.png",
+        "description":"Woman Show Collection"
+    }
+    ,
+    {
+        "id":13,
+        "name":"woman  Bag collection",
+        "catagory":"Woman",
+        "price":30,
+        "image":"https://i.ibb.co/Bs9mnK8/Woman-Bag.jpg",
+        "description":"Exclusive Bang Collection"
+    }
+    ,
+    {
+        "id":14,
+        "name":"Kids TShirt",
+        "catagory":"Kids",
+        "price":10,
+        "image":"https://i.ibb.co/LZrqQ7c/kinds1.jpg",
+        "description":"Kids TShirt Collection"
+    }
+    ,
+    {
+        "id":15,
+        "name":"woman Pant collection",
+        "catagory":"kids",
+        "price":30,
+        "image":"https://i.ibb.co/bsMgvY0/kidspant.jpg",
+        "description":"Kids TShirt Collection"
+    }
+    ,
+    {
+        "id":16,
+        "name":"Kids Watch",
+        "catagory":"Kids",
+        "price":30,
+        "image":"https://i.ibb.co/Qvct3vr/kidswatch.jpg",
+        "description":"Kids Watch Collection"
+    }
+    ,
+    {
+        "id":17,
+        "name":"Kids black Sunglas",
+        "catagory":"Kids",
+        "price":15,
+        "image":"https://i.ibb.co/FDJwkdD/kindssunglass.jpg",
+        "description":"Kids Sunglass Collection"
+    }
+    ,
+    {
+        "id":18,
+        "name":"Kids  show",
+        "catagory":"Kids",
+        "price":50,
+        "image":"https://i.ibb.co/kHzz1CX/kidsshow.jpg",
+        "description":"Kids Show Collection"
+    }
+]
