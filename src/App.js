@@ -1,15 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
 import Header from './Component/Home/Shared/Header/Header';
 import Navber from './Component/Home/Shared/Navber/Navber';
+import Home from './Component/Home/Home/Home';
 
 function App() {
   return (
-    <div className="App">
+    <div>
      <Header></Header>
      <Navber></Navber>
+     <Home/>
     </div>
   );
 }
