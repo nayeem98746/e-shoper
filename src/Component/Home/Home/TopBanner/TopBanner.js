@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 
 const TopBanner = () => {
     return (
-        <div className="container mt-5">
+            <div className="container mt-5">
             <div style={{alignItems:'center'}} className="row g-3">
                 <div className="col-md-6">
                     <h4>UP TO 50% OFF</h4>
