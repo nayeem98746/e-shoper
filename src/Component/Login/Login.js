@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { Button, Col, Container, NavLink, Row } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {  faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import img from '../../Images/login .jpg'
+import google from '../../Images/google.png'
 import './Login.css'
 
 function Login() {
@@ -22,6 +25,9 @@ function Login() {
         alert('hellow')
         e.prevenDefault()
     }
+    // const element = <FontAwesomeIcon icon={fagoogle} />
+    const googleIcon = <FontAwesomeIcon icon="fa-solid fa-g" />
+
     return <div className='main-from'>
         <form onSubmit={handleLoginSubmit} >
             <div className='form-inner'>
@@ -61,6 +67,7 @@ function Login() {
                 </div>
                 <NavLink as={Link} to='/register' >Please Register</NavLink>
                 <input type="submit" value='LOGIN' />
+                <button><img style={{width:'30px', marginLeft:'30px'}} src={google} alt="" /></button>
                 
             </div>
         </form>
