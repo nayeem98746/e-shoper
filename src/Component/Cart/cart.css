@@ -1,0 +1,19 @@
+.cart-product-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.product-info{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.subtotal-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.go-back-link{
+    text-decoration: none;
+}
+.go-back:hover{
+    border-bottom: 1px solid blue;
+}
