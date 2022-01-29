@@ -20,7 +20,7 @@ const ItemContainer = () => {
         dispatch(fetchProduct())
     },[])
     return (
-        <div className="mt-5 text-center">
+        <div id="shop-container" className="mt-5 text-center">
             <h2 style={{fontWeight:"700"}} className='mb-0'>Trending Item</h2>
             <div style={{display:"flex",justifyContent:'center'}}>
             <hr style={{width:"50px",color:"#FF8700",height:"3px"}}/>

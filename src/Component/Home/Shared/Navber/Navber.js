@@ -6,13 +6,13 @@ import logo from '../../../../Images/logo (1).png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faShoppingCart, faUserCircle  } from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from 'react-redux';
+import { HashLink } from 'react-router-hash-link';
 
 
 function Navber() {
   const element = <FontAwesomeIcon icon={faShoppingCart} />
   const user =<FontAwesomeIcon icon={faUserCircle} />
   const cartLength = useSelector( state => state.products.cartProduct)
-    console.log(cartLength.length);
 
   return <>
     <Navbar bg="light" variant="light" sticky="top" collapseOnSelect expand="lg">
@@ -22,7 +22,7 @@ function Navber() {
         <Navbar.Collapse className=''>
 
           <Nav.Link className='link-style ms-auto' as={Link} to="/home"><h6 >Home</h6></Nav.Link>
-          <Nav.Link className='link-style' as={Link} to="/"><h6>Shop</h6></Nav.Link>
+          <HashLink className='link-style' style={{textDecoration:'none'}} smooth to="/#shop-container"><h6>Shop</h6></HashLink>
           <Nav.Link className='link-style' as={Link} to="/"><h6>Checkout</h6></Nav.Link>
           <Nav.Link className='link-style' as={Link} to="/"><h6>Blog</h6></Nav.Link>
           <Nav.Link className='link-style' as={Link} to="/"><h6>Contact Us</h6></Nav.Link>

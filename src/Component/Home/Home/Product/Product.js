@@ -15,7 +15,7 @@ const Product = ({product}) => {
                     <p style={{textAlign:'left',marginBottom:'5px',fontWeight:"500"}}>{name}</p>
                     <p style={{textAlign:'left',marginBottom:'5px',fontWeight:"500"}}>${price}.00</p>
                 </div>
-                <div onClick={ ()=> dispatch(setProductToCart(product))} className="cart-div">
+                <div onClick={ ()=> dispatch(setProductToCart({...product,quantity: 1}))} className="cart-div">
                     <i class="fas fa-cart-plus"></i><span> Add To Cart</span>
                 </div>
             </div>

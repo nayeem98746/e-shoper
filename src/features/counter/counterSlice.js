@@ -15,6 +15,7 @@ const productSlice = createSlice({
     allProducts: [],
     displayProducts:[],
     cartProduct:[],
+    cartPrice: 0,
     productCategory:'Man',
     isLoading: true
   },
@@ -25,13 +26,73 @@ const productSlice = createSlice({
         state.displayProducts = categoryProducts;
       }
     },
+    deleteFromCart:(state,action)=>{
+     const newCart = state.cartProduct.filter(pd=>pd.id !== action.payload.id)
+     state.cartProduct = newCart;
+    },
+    increaseProductQuantity: (state,action)=>{
+      let newCart = []
+      state.cartProduct.forEach(pd=>{
+        if(pd.id === action.payload.id){
+          const newQuantity = action.payload.quantity + 1;
+          let product = {...action.payload}
+          product.quantity = newQuantity;
+          newCart.push(product)
+        }
+        else{
+          newCart.push(pd)
+        }
+      })
+      state.cartProduct = newCart;
+      
+    },
+    decreaseProductQuantity: (state,action)=>{
+      let newCart = []
+      state.cartProduct.forEach(pd=>{
+        if(pd.id === action.payload.id){
+          const newQuantity = action.payload.quantity - 1;
+          let product = {...action.payload}
+          product.quantity = newQuantity;
+          newCart.push(product)
+        }
+        else{
+          newCart.push(pd)
+        }
+      })
+      state.cartProduct = newCart;
+      
+    },
+    setCartPrice: (state,action)=>{
+      if(state.cartProduct.length>0){
+        let totalPrice = 0;
+        state.cartProduct.forEach(pd=>{
+          totalPrice += pd.price*pd.quantity;
+        })
+        state.cartPrice = totalPrice;
+      }
+    },
     setProductsCategory: (state,action)=>{
       state.productCategory = action.payload;
       const categoryProducts = state.allProducts.filter( p => p.catagory === state.productCategory)
       state.displayProducts = categoryProducts;
     },
     setProductToCart:(state,action)=>{
-      state.cartProduct.push(action.payload)
+      let exist = []
+      if(state.cartProduct.length > 0){
+        const existProduct =  state.cartProduct.find( pd=>pd.id === action.payload.id);
+        exist.push(existProduct)
+        if(!existProduct){
+          exist = [];
+        }
+      }
+      if(exist.length !== 0){
+        alert(`
+        This product already in your cart.
+        You can increase the quantity from cart page !`)
+      }
+      else{
+        state.cartProduct.push(action.payload)
+      }
     }
 
   },
@@ -42,5 +103,5 @@ const productSlice = createSlice({
     })
   }
 })
-export const { setDisplayProduct, setProductsCategory, setProductToCart } = productSlice.actions;
+export const { setDisplayProduct, setProductsCategory, setProductToCart, setCartPrice, increaseProductQuantity, decreaseProductQuantity, deleteFromCart } = productSlice.actions;
 export default productSlice.reducer;
