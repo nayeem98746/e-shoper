@@ -17,7 +17,7 @@ const productSlice = createSlice({
     cartProduct:[],
     cartPrice: 0,
     productCategory:'Man',
-    isLoading: true
+    isLoading: true,
   },
   reducers: {
     setDisplayProduct : (state,action)=>{
@@ -101,7 +101,10 @@ const productSlice = createSlice({
       state.allProducts = action.payload;
       state.isLoading = false;
     })
+    
+    
   }
 })
 export const { setDisplayProduct, setProductsCategory, setProductToCart, setCartPrice, increaseProductQuantity, decreaseProductQuantity, deleteFromCart } = productSlice.actions;
+
 export default productSlice.reducer;
