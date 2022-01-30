@@ -10,7 +10,6 @@ const ItemContainer = () => {
     const dispatch = useDispatch();
     const displayProducts = useSelector( state => state.products.displayProducts)
     const allProducts = useSelector( state => state.products.allProducts)
-    console.log(allProducts);
 
     useEffect( ()=>{
         dispatch(setDisplayProduct())

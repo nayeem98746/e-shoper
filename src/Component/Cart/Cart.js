@@ -47,7 +47,7 @@ const Cart = () => {
                 <div className="subtotal text-center">
                     <h5>Subtotal:</h5>
                     <h3>${cartPrice}.00</h3>
-                    <Button className="px-5">Checkout</Button>
+                    <NavLink to="/checkout"><Button className="px-5">Checkout</Button></NavLink>
                 </div>
             </div></>
             }

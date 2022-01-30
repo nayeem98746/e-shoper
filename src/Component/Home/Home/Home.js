@@ -1,4 +1,5 @@
 import React from 'react';
+
 import CategoryBanner from './CategoryBanner/CategoryBanner';
 import ItemContainer from './ItemContainer/ItemContainer';
 import TopBanner from './TopBanner/TopBanner';
