@@ -5,7 +5,7 @@ import {  faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import img from '../../Images/login .jpg'
 import google from '../../Images/google.png'
-import './Login.css'
+// import './Login.css'
 
 function Login() {
     const [loginFromData ,  setLoginFromData] = useState({})

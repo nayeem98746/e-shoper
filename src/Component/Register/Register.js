@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import './Register.css'
+// import './Register.css'
 
 function Register() {
     const [registerFromData ,  setRegisterFromData] = useState({})
