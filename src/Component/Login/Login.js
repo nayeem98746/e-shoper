@@ -7,13 +7,12 @@ import google from '../../Images/google.png'
 import './Login.css'
 import useFirebase from '../../hook/useFirebase';
 import { useLocation } from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
 
 function Login() {
     const [loginFromData ,  setLoginFromData] = useState({})
     const { user, googleSignIn, loginUser } = useFirebase()
     const location = useLocation();
-    const navigator = useNavigate()
+    const navigator = useNavigate();
 
     const handleOnBlur = e => {
         const field = e.target.name
@@ -59,7 +58,7 @@ function Login() {
                 </div>
                 <NavLink as={Link} to='/register' >Please Register</NavLink>
                 <input type="submit" value='LOGIN' />
-                <button onClick={ googleSignIn }><img style={{width:'30px', marginLeft:'30px'}} src={google} alt="" /></button>
+                <button onClick={ ()=> googleSignIn(location,navigator) }><img style={{width:'30px', marginLeft:'30px'}} src={google} alt="" /></button>
                 
             </div>
         </form>

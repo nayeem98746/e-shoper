@@ -24,10 +24,13 @@ const useFirebase = () =>{
         })
     },[])
 
-    const googleSignIn = () =>{
+    const googleSignIn = (location,navigator) =>{
+        console.log(location,navigator);
         signInWithPopup(auth,provider)
         .then( result =>{
             setUser(result.user)
+            const destination = location.state.from || '/';
+            navigator(destination)
         })
         .catch( error =>{
             setAuthError(error.message)
@@ -55,6 +58,8 @@ const useFirebase = () =>{
         signInWithEmailAndPassword( auth, user.email, user.password )
         .then( result => {
             setUser(result.user)
+            const destination = user.location.state.from || '/'
+            user.navigator(destination)
         })
         .catch( error =>{
             setAuthError( error.message )
