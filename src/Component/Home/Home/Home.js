@@ -11,6 +11,7 @@ function Home() {
       <TopBanner/>
       <CategoryBanner/>
       <ItemContainer/>
+      <h3>footer </h3>
     </div>
   );
   }
