@@ -8,10 +8,12 @@ import Login from './Component/Login/Login';
 import Register from './Component/Register/Register';
 import Cart from './Component/Cart/Cart';
 import Checkout from './Component/Checkout/Checkout';
+import AuthProvider from './context/authProvider';
+import PrivateRoute from './Component/PrivateRoute';
 
 function App() {
   return (
-    <div>
+    <AuthProvider>
      <Router>
        <Navber></Navber>
 
@@ -20,12 +22,12 @@ function App() {
         <Route path="/home" element={<Home></Home>} />
         <Route path="/login" element={<Login></Login>} />
         <Route path="/register" element={<Register></Register>} />       
-        <Route path="/cart" element={<Cart></Cart>} />       
-        <Route path="/Checkout" element={<Checkout></Checkout>} />       
+        <Route path="/cart" element={<Cart></Cart>} />
+        <Route path="/checkout" element={<PrivateRoute> <Checkout></Checkout> </PrivateRoute>} />       
        
       </Routes>
       </Router>
-    </div>
+    </AuthProvider>
   );
 }
 

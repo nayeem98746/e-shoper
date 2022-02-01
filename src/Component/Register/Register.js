@@ -2,21 +2,24 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 // import './Register.css'
+=======
+import useFirebase from '../../hook/useFirebase';
 
 function Register() {
     const [registerFromData ,  setRegisterFromData] = useState({})
+    const { registerUser } = useFirebase();
+
     const handleOnChange = e => {
         const field = e.target.name
         const value = e.target.value
-        console.log(field , value)
         const newLogindata = {...registerFromData}
         newLogindata[field] = value
         console.log(newLogindata)
         setRegisterFromData(newLogindata)
     }
     const handleRegisterSubmit = e => {
-        alert('hellow')
-        e.prevenDefault()
+        e.preventDefault()
+        registerUser(registerFromData)
     }
   
 
@@ -34,7 +37,8 @@ function Register() {
             className="form-control" 
              id='name'
              onBlur={handleOnChange}
-              required />
+             required
+            />
       </div>
       <div className='form-group'>
           <label htmlFor="email">Email:</label>
@@ -67,7 +71,7 @@ function Register() {
             id="inputPassword3"
               required />
       </div>
-      <NavLink as={Link} to='/login'  >Already Register</NavLink>
+      <NavLink as={Link} to='/login'  >Already Registered ?</NavLink>
       <input type="submit" value='Register' />
   </div>
 </form></div>;
