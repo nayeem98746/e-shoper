@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, useNavigate } from 'react-router-dom';
 import img from '../../Images/login .jpg'
 import google from '../../Images/google.png'
-// import './Login.css'
+import './Login.css'
 import useFirebase from '../../hook/useFirebase';
 import { useLocation } from 'react-router-dom';
 
@@ -31,7 +31,7 @@ function Login() {
     const googleIcon = <FontAwesomeIcon icon="fa-solid fa-g" />
 
     return <div className='main-from'>
-        <form onSubmit={handleLoginSubmit} >
+        <form className="form" onSubmit={handleLoginSubmit} >
             <div className='form-inner'>
                 <h2>Login</h2>
                 
@@ -40,7 +40,7 @@ function Login() {
                     <input 
                     type="email"
                      name="email"
-                     className="form-control"
+                     className="form-control input"
                      
                       id="inputEmail3"
                        onBlur={handleOnBlur}  label="email" 
@@ -49,7 +49,7 @@ function Login() {
                 <div className='form-group'>
                     <label htmlFor="password">Password:</label>
                     <input
-                     className="form-control"
+                     className="form-control input"
                      type="password" 
                      name='password' 
                      id="inputPassword3"
@@ -57,8 +57,8 @@ function Login() {
                      required />
                 </div>
                 <NavLink as={Link} to='/register' >Please Register</NavLink>
-                <input type="submit" value='LOGIN' />
-                <button onClick={ ()=> googleSignIn(location,navigator) }><img style={{width:'30px', marginLeft:'30px'}} src={google} alt="" /></button>
+                <input className="input" type="submit" value='LOGIN' />
+                <button className="button" onClick={ ()=> googleSignIn(location,navigator) }><img style={{width:'30px', marginLeft:'30px'}} src={google} alt="" /></button>
                 
             </div>
         </form>

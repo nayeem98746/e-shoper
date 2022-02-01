@@ -76,8 +76,9 @@ const Checkout = () => {
               </div>
                 
 
-         </div>
+                </div>
                 
+            </div>
             </div>
            
     );

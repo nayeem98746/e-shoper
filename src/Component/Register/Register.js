@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-// import './Register.css'
-=======
+import './Register.css'
 import useFirebase from '../../hook/useFirebase';
 
 function Register() {
@@ -26,7 +25,7 @@ function Register() {
 
 
     
-  return <div className='main-from'> <form onSubmit={handleRegisterSubmit} > 
+  return <div className='main-from'> <form className='form' onSubmit={handleRegisterSubmit} > 
   <div className='form-inner'>
       <h2>Register</h2>
       <div className='form-group'>
@@ -34,7 +33,7 @@ function Register() {
           <input
            type="text"
             name='name'
-            className="form-control" 
+            className="form-control input" 
              id='name'
              onBlur={handleOnChange}
              required
@@ -47,14 +46,14 @@ function Register() {
             type="email"
              name='email'
              id="inputEmail3"
-              className="form-control"
+              className="form-control input"
                required />
       </div>
       <div className='form-group'>
           <label htmlFor="password">Password:</label>
           <input
            onBlur={handleOnChange} 
-           className="form-control"
+           className="form-control input"
            type="password"
             name='password'
             id="inputPassword3"
@@ -65,14 +64,14 @@ function Register() {
           <label htmlFor="password">Re-Type-Password:</label>
           <input
            onBlur={handleOnChange} 
-           className="form-control"
+           className="form-control input"
            type="password"
             name='password'
             id="inputPassword3"
               required />
       </div>
       <NavLink as={Link} to='/login'  >Already Registered ?</NavLink>
-      <input type="submit" value='Register' />
+      <input className='input' type="submit" value='Register' />
   </div>
 </form></div>;
 }
