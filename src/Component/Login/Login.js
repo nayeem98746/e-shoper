@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, useNavigate } from 'react-router-dom';
 import img from '../../Images/login .jpg'
 import google from '../../Images/google.png'
-import './Login.css'
+// import './Login.css'
 import useFirebase from '../../hook/useFirebase';
 import { useLocation } from 'react-router-dom';
 

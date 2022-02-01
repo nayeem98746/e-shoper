@@ -1,0 +1,11 @@
+.order form {
+    margin-top: 30px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+ }
+ .order form input, textarea{
+     width: 70%;
+     margin-bottom: 15px;
+ }
