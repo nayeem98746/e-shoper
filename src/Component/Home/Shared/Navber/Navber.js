@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faShoppingCart, faUserCircle  } from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from 'react-redux';
 import { HashLink } from 'react-router-hash-link';
-import useFirebase from '../../../../Hook/useFirebase';
+import useAuth from '../../../../hook/useAuth';
 
 
 
@@ -15,7 +15,7 @@ function Navber() {
   const element = <FontAwesomeIcon icon={faShoppingCart} />
   const icon =<FontAwesomeIcon icon={faUserCircle} />
   const cartLength = useSelector( state => state.products.cartProduct)
-  const { user, logOut } = useFirebase();
+  const { user, logOut } = useAuth()
 
 
   return <>
@@ -28,7 +28,7 @@ function Navber() {
           <Nav.Link className='link-style ms-auto' as={Link} to="/home"><h6 >Home</h6></Nav.Link>
           <HashLink className='link-style' style={{textDecoration:'none'}} smooth to="/#shop-container"><h6>Shop</h6></HashLink>
           <Nav.Link className='link-style' as={Link} to="/"><h6>Blog</h6></Nav.Link>
-          <Nav.Link className='link-style' as={Link} to="/"><h6>Contact Us</h6></Nav.Link>
+          <Nav.Link className='link-style' as={Link} to="/contact"><h6>Contact Us</h6></Nav.Link>
           <Nav.Link className='link-style cart-button' as={Link} to="/cart"><h6>{cartLength.length}{element}</h6></Nav.Link>
           <a>
             {
