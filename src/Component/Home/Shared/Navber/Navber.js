@@ -8,13 +8,14 @@ import {  faShoppingCart, faUserCircle  } from '@fortawesome/free-solid-svg-icon
 import { useSelector } from 'react-redux';
 import { HashLink } from 'react-router-hash-link';
 import useFirebase from '../../../../hook/useFirebase';
+import useAuth from '../../../../hook/useAuth';
 
 
 function Navber() {
   const element = <FontAwesomeIcon icon={faShoppingCart} />
   const icon =<FontAwesomeIcon icon={faUserCircle} />
   const cartLength = useSelector( state => state.products.cartProduct)
-  const { user, logOut } = useFirebase();
+  const { user, logOut } = useAuth();
 
 
   return <>
@@ -28,10 +29,17 @@ function Navber() {
           <HashLink className='link-style' style={{textDecoration:'none'}} smooth to="/#shop-container"><h6>Shop</h6></HashLink>
           <Nav.Link className='link-style' as={Link} to="/"><h6>Blog</h6></Nav.Link>
           <Nav.Link className='link-style' as={Link} to="/"><h6>Contact Us</h6></Nav.Link>
+          <Nav.Link className='link-style' as={Link} to="/dashboard"><h6>Dashboard</h6></Nav.Link>
+         
           <Nav.Link className='link-style cart-button' as={Link} to="/cart"><h6>{cartLength.length}{element}</h6></Nav.Link>
           <a>
             {
-              user ? <>{user.displayName} {icon} <Button onClick={ logOut }>Logout</Button> </>  : <Nav.Link className='link-style' as={Link} to="/login"><Button>Login</Button></Nav.Link>
+              user ?.email ?
+               <>
+               {user.displayName} {icon} <Button onClick={ logOut }>Logout</Button>
+                </>
+               
+               : <Nav.Link className='link-style' as={Link} to="/login"><Button>Login</Button></Nav.Link>
             }
             
           </a>

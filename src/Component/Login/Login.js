@@ -7,10 +7,11 @@ import google from '../../Images/google.png'
 import './Login.css'
 import useFirebase from '../../hook/useFirebase';
 import { useLocation } from 'react-router-dom';
+import useAuth from '../../hook/useAuth';
 
 function Login() {
     const [loginFromData ,  setLoginFromData] = useState({})
-    const { user, googleSignIn, loginUser } = useFirebase()
+    const { user, googleSignIn, loginUser } = useAuth()
     const location = useLocation();
     const navigator = useNavigate();
 

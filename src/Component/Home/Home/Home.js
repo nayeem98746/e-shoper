@@ -1,4 +1,5 @@
 import React from 'react';
+import Navber from '../Shared/Navber/Navber';
 
 import CategoryBanner from './CategoryBanner/CategoryBanner';
 import ItemContainer from './ItemContainer/ItemContainer';
@@ -8,6 +9,7 @@ function Home() {
 
   return (
     <div>
+      <Navber></Navber>
       <TopBanner/>
       <CategoryBanner/>
       <ItemContainer/>
