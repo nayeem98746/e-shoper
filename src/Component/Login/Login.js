@@ -2,15 +2,14 @@ import React, { useState } from 'react';
 import {  NavLink, } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, useNavigate } from 'react-router-dom';
-import img from '../../Images/login .jpg'
 import google from '../../Images/google.png'
 import './Login.css'
-import useFirebase from '../../Hook/useFirebase';
 import { useLocation } from 'react-router-dom';
+import useAuth from '../../hook/useAuth';
 
 function Login() {
     const [loginFromData ,  setLoginFromData] = useState({})
-    const { user, googleSignIn, loginUser } = useFirebase()
+    const { googleSignIn, loginUser } = useAuth()
     const location = useLocation();
     const navigator = useNavigate();
 
@@ -21,7 +20,6 @@ function Login() {
         newLogindata[field] = value
         setLoginFromData(newLogindata)
     }
-
 
     const handleLoginSubmit = e => {
         e.preventDefault()
