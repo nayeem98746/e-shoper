@@ -6,10 +6,13 @@ import service from '../../../Images/download (3).png'
 import review from '../../../Images/download (2).png'
 import './Dashboard.css'
 import Review from '../User/Review/Review';
+import useAuth from '../../../hook/useAuth';
 
 function Dashboard() {
     const home  = <FontAwesomeIcon icon={faHome} />
     const singout  = <FontAwesomeIcon icon={faSignOutAlt} />
+    const { user, logOut } = useAuth();
+
   return <div className='row'>
       <div className='col-md-3 col-lg-3'>
         <div className='sidebar-container'>
@@ -35,7 +38,7 @@ function Dashboard() {
                         Review</Link>
                 </li>
                 <li>
-                    <Link as={Link} to="/home" className='dashboard-menu' >
+                    <Link as={Link} to='/home' className='dashboard-menu' >
                     <span className='logo-style' >{singout}</span>
                         Logout</Link>
                 </li>

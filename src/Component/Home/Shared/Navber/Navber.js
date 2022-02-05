@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faShoppingCart, faUserCircle  } from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from 'react-redux';
 import { HashLink } from 'react-router-hash-link';
-import useFirebase from '../../../../hook/useFirebase';
 import useAuth from '../../../../hook/useAuth';
 
 
