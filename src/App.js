@@ -10,13 +10,15 @@ import Cart from './Component/Cart/Cart';
 import Checkout from './Component/Checkout/Checkout';
 import AuthProvider from './context/authProvider';
 import PrivateRoute from './Component/PrivateRoute';
+import Dashboard from './Component/Dashboard/Dashboard/Dashboard';
 import Contact from './Component/Contact/Contact';
+
 
 function App() {
   return (
     <AuthProvider>
      <Router>
-       <Navber></Navber>
+       {/* <Navber></Navber> */}
 
       <Routes>
         <Route path="/" element={<Home></Home>} />
@@ -26,6 +28,7 @@ function App() {
         <Route path="/cart" element={<Cart></Cart>} />
         <Route path="/contact" element={<Contact></Contact>} />
         <Route path="/checkout" element={<PrivateRoute> <Checkout></Checkout> </PrivateRoute>} />       
+        <Route path="/dashboard" element={<PrivateRoute> <Dashboard></Dashboard> </PrivateRoute>} />       
        
       </Routes>
       </Router>

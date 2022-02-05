@@ -9,7 +9,7 @@ import useAuth from '../../hook/useAuth';
 
 function Login() {
     const [loginFromData ,  setLoginFromData] = useState({})
-    const { googleSignIn, loginUser } = useAuth()
+    const { user, googleSignIn, loginUser } = useAuth()
     const location = useLocation();
     const navigator = useNavigate();
 

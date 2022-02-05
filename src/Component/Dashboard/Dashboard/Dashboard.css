@@ -1,0 +1,19 @@
+.dashboard-menu{
+    text-decoration: none;
+    color: whitesmoke;
+    padding-bottom:20px ;
+    
+}
+.dashboard-menu:hover{
+    color:#ffd100 ;
+}
+.text li{
+    padding-bottom: 20px;
+}
+.sidebar-container{
+    background-color: #323a3e;
+    padding-bottom: 200px;
+}
+.logo-style{
+    color: #ffd100;
+}

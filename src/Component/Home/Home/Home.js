@@ -1,4 +1,5 @@
 import React from 'react';
+import Navber from '../Shared/Navber/Navber';
 
 import CategoryBanner from './CategoryBanner/CategoryBanner';
 import Footer from './Footer/Footer';
@@ -9,6 +10,7 @@ function Home() {
 
   return (
     <div>
+      <Navber></Navber>
       <TopBanner/>
       <CategoryBanner/>
       <ItemContainer/>
