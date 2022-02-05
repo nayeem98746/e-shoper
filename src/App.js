@@ -11,6 +11,8 @@ import Checkout from './Component/Checkout/Checkout';
 import AuthProvider from './context/authProvider';
 import PrivateRoute from './Component/PrivateRoute';
 import Dashboard from './Component/Dashboard/Dashboard/Dashboard';
+import Contact from './Component/Contact/Contact';
+
 
 function App() {
   return (
@@ -24,6 +26,7 @@ function App() {
         <Route path="/login" element={<Login></Login>} />
         <Route path="/register" element={<Register></Register>} />       
         <Route path="/cart" element={<Cart></Cart>} />
+        <Route path="/contact" element={<Contact></Contact>} />
         <Route path="/checkout" element={<PrivateRoute> <Checkout></Checkout> </PrivateRoute>} />       
         <Route path="/dashboard" element={<PrivateRoute> <Dashboard></Dashboard> </PrivateRoute>} />       
        

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Register.css'
-import useFirebase from '../../hook/useFirebase';
 import useAuth from '../../hook/useAuth';
 
 function Register() {

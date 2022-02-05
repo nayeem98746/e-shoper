@@ -2,6 +2,7 @@ import React from 'react';
 import Navber from '../Shared/Navber/Navber';
 
 import CategoryBanner from './CategoryBanner/CategoryBanner';
+import Footer from './Footer/Footer';
 import ItemContainer from './ItemContainer/ItemContainer';
 import TopBanner from './TopBanner/TopBanner';
 
@@ -13,7 +14,7 @@ function Home() {
       <TopBanner/>
       <CategoryBanner/>
       <ItemContainer/>
-      <h3>footer </h3>
+      <Footer />
     </div>
   );
   }
