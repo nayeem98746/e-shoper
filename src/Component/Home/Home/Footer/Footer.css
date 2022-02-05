@@ -1,0 +1,29 @@
+footer {
+   padding: 5rem 0;
+   background-color: #182334;
+   color: #fff; 
+}
+footer li {
+    list-style: none;
+    cursor: pointer;
+    margin: 1rem 0;
+}
+footer li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: lighter;
+}
+footer li a:hover{
+    color: orange;
+}
+a i{
+  font-size: 2rem;
+  padding: 1rem 1rem ;
+  border-radius: 50px;
+  margin: 1rem 0;
+  
+}
+a i:hover{
+    color: orange;
+}

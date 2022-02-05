@@ -25,7 +25,6 @@ const useFirebase = () =>{
     },[])
 
     const googleSignIn = (location,navigator) =>{
-        console.log(location,navigator);
         signInWithPopup(auth,provider)
         .then( result =>{
             setUser(result.user)
@@ -54,12 +53,13 @@ const useFirebase = () =>{
         })
     }
 
-    const loginUser = ( user ) =>{
-        signInWithEmailAndPassword( auth, user.email, user.password )
+    const loginUser = ({email,password,location,navigator} ) =>{
+        signInWithEmailAndPassword( auth, email, password )
         .then( result => {
+            
             setUser(result.user)
-            const destination = user.location.state.from || '/'
-            user.navigator(destination)
+            const destination = location.state.from || '/';
+            navigator(destination)
         })
         .catch( error =>{
             setAuthError( error.message )
