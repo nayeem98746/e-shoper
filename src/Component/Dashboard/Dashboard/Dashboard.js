@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faShoppingCart, faUserCircle, faHome , faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import service from '../../../Images/download (3).png'
 import review from '../../../Images/download (2).png'
 import './Dashboard.css'
@@ -20,7 +20,7 @@ function Dashboard() {
                         Home</Link>
                 </li>
                 <li>
-                    <Link as={Link} to="/home" className='dashboard-menu' >
+                    <Link as={Link} to="/dashboard/admin" className='dashboard-menu' >
                     <span className='logo-style' >{home}</span>
                         Admin</Link>
                 </li>
@@ -30,7 +30,7 @@ function Dashboard() {
                         Add-Product</Link>
                 </li>
                 <li>
-                    <Link as={Link} to="/review" className='dashboard-menu' >
+                    <Link as={Link} to="/dashboard/review" className='dashboard-menu' >
                     <span className='logo-style' >{home}</span>
                         Review</Link>
                 </li>
@@ -48,7 +48,8 @@ function Dashboard() {
         </div>
       </div>
       <div className='col-md-9 col-lg-9'>
-          <Review></Review>
+
+          <Outlet/>
 
       </div>
   </div>;

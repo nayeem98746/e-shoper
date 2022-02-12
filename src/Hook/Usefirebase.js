@@ -9,8 +9,9 @@ const useFirebase = () =>{
     const provider = new GoogleAuthProvider()
 
     const [ user, setUser ] = useState(null)
+    const [ modal, setModal ] = useState(false)
     const [ authError, setAuthError ] = useState('');
-    const [ isLoading, setIsLoading ] = useState(true)
+    const [ isLoading, setIsLoading ] = useState(true);
 
     useEffect( ()=>{
         onAuthStateChanged(auth, user =>{
@@ -28,6 +29,7 @@ const useFirebase = () =>{
         signInWithPopup(auth,provider)
         .then( result =>{
             setUser(result.user)
+            console.log(location.state.from);
             const destination = location.state.from || '/';
             navigator(destination)
         })
@@ -42,8 +44,9 @@ const useFirebase = () =>{
             updateProfile(auth.currentUser, {
                 displayName: user.name})
                 .then(() => {
-                // Profile updated!
-                // ...
+
+                setModal(true)
+                
               }).catch((error) => {
                 setAuthError(error.message)
               });
@@ -56,10 +59,10 @@ const useFirebase = () =>{
     const loginUser = ({email,password,location,navigator} ) =>{
         signInWithEmailAndPassword( auth, email, password )
         .then( result => {
-            
             setUser(result.user)
-            const destination = location.state.from || '/';
-            navigator(destination)
+            // const destination = location.state.from || '/';
+            // navigator(destination)
+            setModal(true)
         })
         .catch( error =>{
             setAuthError( error.message )
@@ -81,7 +84,9 @@ const useFirebase = () =>{
         registerUser,
         loginUser,
         logOut,
-        isLoading
+        isLoading,
+        setModal,
+        modal
     }
 }
 

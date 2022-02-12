@@ -12,6 +12,9 @@ import AuthProvider from './context/authProvider';
 import PrivateRoute from './Component/PrivateRoute';
 import Dashboard from './Component/Dashboard/Dashboard/Dashboard';
 import Contact from './Component/Contact/Contact';
+import AddAdmin from './Component/Dashboard/Admin/AddAdmin/AddAdmin';
+import DashboardHome from './Component/Dashboard/DashboardHome/DashboardHome';
+import Review from './Component/Dashboard/User/Review/Review';
 
 
 function App() {
@@ -27,8 +30,15 @@ function App() {
         <Route path="/register" element={<Register></Register>} />       
         <Route path="/cart" element={<Cart></Cart>} />
         <Route path="/contact" element={<Contact></Contact>} />
-        <Route path="/checkout" element={<PrivateRoute> <Checkout></Checkout> </PrivateRoute>} />       
-        <Route path="/dashboard" element={<PrivateRoute> <Dashboard></Dashboard> </PrivateRoute>} />       
+        <Route path="/checkout" element={<PrivateRoute> <Checkout></Checkout> </PrivateRoute>} />  
+             
+        <Route path="/dashboard" element={<PrivateRoute><Dashboard/></PrivateRoute>}>
+
+          <Route path="/dashboard" element={<DashboardHome/>}/>
+          <Route path="/dashboard/admin" element={<AddAdmin/>}/>
+          <Route path="/dashboard/review" element={<Review/>}/>
+
+        </Route>      
        
       </Routes>
       </Router>
