@@ -1,12 +1,42 @@
 import './Checkout.css';
-import React from "react";
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import img1 from '../../Images/SSLCommerz.png';
+import useAuth from '../../hook/useAuth';
+import { useSelector } from 'react-redux';
 
-
-const Checkout = () => {
+const Checkout = ({}) => {
   const { register, handleSubmit } = useForm();
+  const cartProduct = useSelector(state=>state.products.cartProduct)
+  const cartPrice = useSelector(state=>state.products.cartPrice)
+  const  {user} = useAuth()
+  // const {name, image, price, quantity} = product;
   const onSubmit = data => console.log(data);
+console.log(cartPrice)
+  const parchase=()=>{
+    const order ={
+        cus_name:user?.displayName,
+        cus_email:user?.email,
+        product_name:cartProduct[0].name,
+        product_image:cartProduct[0].image,
+         total_amount:cartPrice
+
+    }
+    console.log(order)
+  fetch(`http://localhost:8000/init`,{
+    method:"POST",
+    headers:{
+      "content-type":"application/json"
+    },
+    body:JSON.stringify(order)
+  })
+  .then(res=>res.json())
+  .then(data=>{
+    window.location.replace(data);
+  })
+  }
+
+  
  
     return (
         <div className="container p-4">
@@ -56,6 +86,7 @@ const Checkout = () => {
               <h5 className='p-4 '>We Accpet </h5>
               <img src={img1} alt=""/>
                       </div>
+                      <button onClick={parchase()} className='button-warning'>Pay</button>
 
    
   

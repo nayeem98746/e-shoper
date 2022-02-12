@@ -8,6 +8,7 @@ import Login from './Component/Login/Login';
 import Register from './Component/Register/Register';
 import Cart from './Component/Cart/Cart';
 import Checkout from './Component/Checkout/Checkout';
+import Success from './Component/Success/Success';
 import AuthProvider from './context/authProvider';
 import PrivateRoute from './Component/PrivateRoute';
 import Dashboard from './Component/Dashboard/Dashboard/Dashboard';
@@ -28,8 +29,9 @@ function App() {
         <Route path="/cart" element={<Cart></Cart>} />
         <Route path="/contact" element={<Contact></Contact>} />
         <Route path="/checkout" element={<PrivateRoute> <Checkout></Checkout> </PrivateRoute>} />       
+        <Route path="/success" element={<PrivateRoute> <Success></Success> </PrivateRoute>} />       
         <Route path="/dashboard" element={<PrivateRoute> <Dashboard></Dashboard> </PrivateRoute>} />       
-       
+      
       </Routes>
       </Router>
     </AuthProvider>
