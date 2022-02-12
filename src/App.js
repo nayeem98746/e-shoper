@@ -12,6 +12,11 @@ import AuthProvider from './context/authProvider';
 import PrivateRoute from './Component/PrivateRoute';
 import Dashboard from './Component/Dashboard/Dashboard/Dashboard';
 import Contact from './Component/Contact/Contact';
+import Review from './Component/Dashboard/User/Review/Review';
+import DashboardHome from './Component/Dashboard/DashboardHome/DashboardHome';
+import AddAdmin from './Component/Dashboard/Admin/AddAdmin/AddAdmin';
+import AddProduct from './Component/Dashboard/AddProduct/AddProduct';
+import AdminRoute from './Component/Login/AdminRoute/AdminRoute';
 
 
 function App() {
@@ -27,8 +32,20 @@ function App() {
         <Route path="/register" element={<Register></Register>} />       
         <Route path="/cart" element={<Cart></Cart>} />
         <Route path="/contact" element={<Contact></Contact>} />
-        <Route path="/checkout" element={<PrivateRoute> <Checkout></Checkout> </PrivateRoute>} />       
-        <Route path="/dashboard" element={<PrivateRoute> <Dashboard></Dashboard> </PrivateRoute>} />       
+        <Route path="/checkout" element={<PrivateRoute> <Checkout></Checkout> </PrivateRoute>} />    
+        
+        <Route path="/dashboard" element={<PrivateRoute><Dashboard/></PrivateRoute>}> 
+        <Route path="/dashboard" element={<DashboardHome></DashboardHome>} />
+
+        <Route path={`/dashboard/review`} element={<Review></Review>} />
+        <Route path={`/dashboard/addadmin`} element={<AdminRoute><AddAdmin></AddAdmin></AdminRoute>} />
+        <Route path={`/dashboard/addproduct`} element={<AdminRoute><AddProduct></AddProduct></AdminRoute>} />
+
+         </Route>
+      
+         
+          
+           
        
       </Routes>
       </Router>
