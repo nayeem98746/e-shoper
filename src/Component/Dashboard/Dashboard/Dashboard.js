@@ -2,18 +2,9 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faShoppingCart, faUserCircle, faHome , faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { Link, Outlet } from 'react-router-dom';
-import service from '../../../Images/download (3).png'
-import review from '../../../Images/download (2).png'
 import './Dashboard.css'
-import Review from '../User/Review/Review';
-import useAuth from '../../../hook/useAuth';
-import { render } from "react-dom";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  useRouteMatch
-} from "react-router-dom";
+import useAuth from '../../../hook/UseAuth';
+
 import { Button } from 'react-bootstrap';
 
 function Dashboard(props) {
@@ -40,15 +31,16 @@ function Dashboard(props) {
   return <div className='row'>
       <div className='col-md-3 col-lg-3'>
         <div className='sidebar-container'>
-            <Button><Link to='/home' >Home</Link></Button>
+         
             <ul className='text-center text '>
                 <li>
-                    <Link to={`/dashboard`} className='dashboard-menu' >
+                    <Link to='/home' className='dashboard-menu' >
                         <span className='logo-style' >{home}</span>
                         Home</Link>
                 </li>
                 <li>
                     <Link  to={`/dashboard/addadmin`} className='dashboard-menu' >
+                    
                     <span className='logo-style' >{home}</span>
                         Admin</Link>
                 </li>
@@ -64,9 +56,10 @@ function Dashboard(props) {
                         Review</Link>
                 </li>
                 <li>
-                    <Link to={`/dashboard/logout`} className='dashboard-menu' >
+                    {/* <Link className='dashboard-menu' > */}
                     <span className='logo-style' >{singout}</span>
-                       <Button onClick={logOut}>LogOut</Button></Link>
+                       <Button onClick={logOut}>LogOut</Button>
+                       {/* </Link> */}
                 </li>
                 
                
@@ -80,6 +73,7 @@ function Dashboard(props) {
       </div>
       <div className='col-md-9 col-lg-9'>
         <Outlet></Outlet>
+
 
       </div>
   </div>;

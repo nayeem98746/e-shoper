@@ -1,4 +1,4 @@
-.apply-form-input {
+.input-apply {
     width: 350px;
     height: 48px;
     border: 1px solid rgb(226, 238, 226);
@@ -6,7 +6,7 @@
     margin-top: 20px;
     padding: 20px;
   }
-  .apply-form-input:hover {
+  .input-apply:hover {
     border: 1px solid gray;
   }
   .confirm-apply-btn {

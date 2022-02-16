@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-bootstrap';
+import { Button, Modal, NavLink } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Register.css'
-import useAuth from '../../hook/useAuth';
+import useAuth from '../../hook/UseAuth';
 
 function Register() {
     const [registerFromData ,  setRegisterFromData] = useState({})
-    const { registerUser } = useAuth();
+    const { registerUser, modal, setModal, user } = useAuth();
 
     const handleOnChange = e => {
         const field = e.target.name
@@ -22,11 +22,23 @@ function Register() {
     }
   
 
-
-
     
-  return <div className='main-from'> <form className='form' onSubmit={handleRegisterSubmit} > 
-  <div className='form-inner'>
+  return <div className='main-from'>
+
+      <Modal show={modal}>
+        <Modal.Header>
+          <Modal.Title>Registration Successful !</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Hello Mr./Ms. {user?.displayName} You have successfully registered !</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={ ()=>setModal(false)}>
+            <Link style={{color:'white',textDecoration:'none'}} to="/">Go To Home</Link>
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+      <form className='form' onSubmit={handleRegisterSubmit} > 
+    <div className='form-inner'>
       <h2>Register</h2>
       <div className='form-group'>
           <label htmlFor="name">Name:</label>
