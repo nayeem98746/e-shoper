@@ -1,13 +1,13 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { setProductToCart } from '../../features/counter/counterSlice';
 import './AllProduct.css'
 
 const AllProduct = ({allproduct}) => {
-    const { _id, name, catagory, price, img, description} = allproduct
+    const { name, price, img,} = allproduct;
     const dispatch = useDispatch()
+    // console.log(allproduct);
     return (
         <div>
             <div className='card-main'>

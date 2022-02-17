@@ -66,7 +66,7 @@ const productSlice = createSlice({
       if(state.cartProduct.length>0){
         let totalPrice = 0;
         state.cartProduct.forEach(pd=>{
-          totalPrice += pd.price*pd.quantity;
+          totalPrice += parseInt(pd.price)*pd.quantity;
         })
         state.cartPrice = totalPrice;
       }
@@ -91,7 +91,7 @@ const productSlice = createSlice({
         You can increase the quantity from cart page !`)
       }
       else{
-        state.cartProduct.push(action.payload)
+        state.cartProduct.push({...action.payload, quantity: 1})
       }
     }
 

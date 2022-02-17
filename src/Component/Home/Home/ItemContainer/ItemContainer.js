@@ -3,6 +3,7 @@ import { Col, Container, Nav, Row, Tab } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { fetchProduct, setDisplayProduct, setProductsCategory } from '../../../../features/counter/counterSlice';
+import AllProduct from '../../../AllProduct/AllProduct';
 import Product from '../Product/Product';
 import './itemContainer.css'
 
@@ -46,7 +47,7 @@ const ItemContainer = () => {
                         <Container>
                         <div className="card-container">
                          {
-                             displayProducts.map( p => <Product key={p.id} product={p}/>)
+                             displayProducts.map( p => <AllProduct key={p._id} allproduct={p}/>)
                          }
                         </div>
                         </Container>
@@ -55,7 +56,7 @@ const ItemContainer = () => {
                         <Container>
                         <div className="card-container">
                          {
-                             displayProducts.map( p => <Product key={p.id} product={p}/>)
+                             displayProducts.map( p => <AllProduct key={p._id} allproduct={p}/>)
                          }
                         </div>
                         </Container>
@@ -64,7 +65,7 @@ const ItemContainer = () => {
                         <Container>
                         <div className="card-container">
                          {
-                             displayProducts.map( p => <Product key={p.id} product={p}/>)
+                             displayProducts.map( p => <AllProduct key={p._id} allproduct={p}/>)
                          }
                         </div>
                         </Container>
