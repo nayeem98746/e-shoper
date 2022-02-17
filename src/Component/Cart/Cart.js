@@ -13,7 +13,7 @@ const Cart = () => {
     const dispatch = useDispatch()
     useEffect( ()=>{
         dispatch(setCartPrice())
-    },[cartProducts])
+    },[cartProducts])                        
     
     return (
         <Container className="my-3">

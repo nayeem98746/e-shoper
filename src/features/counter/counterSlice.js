@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 export const fetchProduct = createAsyncThunk(
   'allProducts/fetchAllProducts',
   async()=>{
-    const response = await fetch('./fakeData/fakeData.json')
+    const response = await fetch('https://powerful-oasis-75511.herokuapp.com/products')
     .then( res => res.json())
     return response;
   }
@@ -27,13 +27,13 @@ const productSlice = createSlice({
       }
     },
     deleteFromCart:(state,action)=>{
-     const newCart = state.cartProduct.filter(pd=>pd.id !== action.payload.id)
+     const newCart = state.cartProduct.filter(pd=>pd._id !== action.payload._id)
      state.cartProduct = newCart;
     },
     increaseProductQuantity: (state,action)=>{
       let newCart = []
       state.cartProduct.forEach(pd=>{
-        if(pd.id === action.payload.id){
+        if(pd._id === action.payload._id){
           const newQuantity = action.payload.quantity + 1;
           let product = {...action.payload}
           product.quantity = newQuantity;
@@ -49,7 +49,7 @@ const productSlice = createSlice({
     decreaseProductQuantity: (state,action)=>{
       let newCart = []
       state.cartProduct.forEach(pd=>{
-        if(pd.id === action.payload.id){
+        if(pd._id === action.payload._id){
           const newQuantity = action.payload.quantity - 1;
           let product = {...action.payload}
           product.quantity = newQuantity;
@@ -79,7 +79,7 @@ const productSlice = createSlice({
     setProductToCart:(state,action)=>{
       let exist = []
       if(state.cartProduct.length > 0){
-        const existProduct =  state.cartProduct.find( pd=>pd.id === action.payload.id);
+        const existProduct =  state.cartProduct.find( pd=>pd._id === action.payload._id);
         exist.push(existProduct)
         if(!existProduct){
           exist = [];

@@ -3,12 +3,12 @@ import { useDispatch } from 'react-redux';
 import { setProductToCart } from '../../../../features/counter/counterSlice';
 import './product.css'
 const Product = ({product}) => {
-    const { image, name, price } = product;
+    const { img, name, price } = product;
     const dispatch = useDispatch();
     return (
         <div className="shadow border">
             <div className="img-container">
-                <img src={image} alt="" />
+                <img src={img} alt="" />
             </div>
             <div className="card-info p-2">
                 <div className="price-div">

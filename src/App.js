@@ -12,9 +12,14 @@ import AuthProvider from './context/authProvider';
 import PrivateRoute from './Component/PrivateRoute';
 import Dashboard from './Component/Dashboard/Dashboard/Dashboard';
 import Contact from './Component/Contact/Contact';
-import AddAdmin from './Component/Dashboard/Admin/AddAdmin/AddAdmin';
-import DashboardHome from './Component/Dashboard/DashboardHome/DashboardHome';
 import Review from './Component/Dashboard/User/Review/Review';
+import AddAdmin from './Component/Dashboard/Admin/AddAdmin/AddAdmin';
+import AddProduct from './Component/Dashboard/AddProduct/AddProduct';
+import AdminRoute from './Component/Login/AdminRoute/AdminRoute';
+import AllProducts from './Component/AllProducts/AllProducts';
+// import Details from './Component/Details/Details';
+
+
 
 
 function App() {
@@ -30,15 +35,24 @@ function App() {
         <Route path="/register" element={<Register></Register>} />       
         <Route path="/cart" element={<Cart></Cart>} />
         <Route path="/contact" element={<Contact></Contact>} />
-        <Route path="/checkout" element={<PrivateRoute> <Checkout></Checkout> </PrivateRoute>} />  
+        <Route path="/allproducts" element={<AllProducts></AllProducts>} />
+        <Route path="/checkout" element={<PrivateRoute> <Checkout></Checkout> </PrivateRoute>} />    
+        {/* <Route path="/details/:productID" element={<PrivateRoute> <Details></Details> </PrivateRoute>} />     */}
+        
+        <Route path="/dashboard" element={<PrivateRoute><Dashboard/></PrivateRoute>}> 
+        {/* <Route path="/dashboardhome" element={<DashboardHome></DashboardHome>} /> */}
+
+        <Route path={`/dashboard/review`} element={<Review></Review>} />
+        <Route path={`/dashboard/addadmin`} element={<AdminRoute><AddAdmin></AddAdmin></AdminRoute>} />
+        <Route path={`/dashboard/addproduct`} element={<AdminRoute><AddProduct></AddProduct></AdminRoute>} />
+
+         </Route>
+      
+         
+          
+           
+
              
-        <Route path="/dashboard" element={<PrivateRoute><Dashboard/></PrivateRoute>}>
-
-          <Route path="/dashboard" element={<DashboardHome/>}/>
-          <Route path="/dashboard/admin" element={<AddAdmin/>}/>
-          <Route path="/dashboard/review" element={<Review/>}/>
-
-        </Route>      
        
       </Routes>
       </Router>

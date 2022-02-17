@@ -1,4 +1,5 @@
 import React from 'react';
+import Testimonoals from '../../Testimonoals/Testimonoals';
 import Navber from '../Shared/Navber/Navber';
 
 import CategoryBanner from './CategoryBanner/CategoryBanner';
@@ -14,6 +15,7 @@ function Home() {
       <TopBanner/>
       <CategoryBanner/>
       <ItemContainer/>
+      <Testimonoals></Testimonoals>
       <Footer />
     </div>
   );

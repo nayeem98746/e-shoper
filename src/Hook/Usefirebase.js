@@ -11,7 +11,11 @@ const useFirebase = () =>{
     const [ user, setUser ] = useState(null)
     const [ modal, setModal ] = useState(false)
     const [ authError, setAuthError ] = useState('');
-    const [ isLoading, setIsLoading ] = useState(true);
+
+    const [ isLoading, setIsLoading ] = useState(true)
+    const [admin, setAdmin] = useState(false)
+
+    
 
     useEffect( ()=>{
         onAuthStateChanged(auth, user =>{
@@ -29,6 +33,8 @@ const useFirebase = () =>{
         signInWithPopup(auth,provider)
         .then( result =>{
             setUser(result.user)
+            userDatabase(user.email, user.displayName, 'PUT')
+
             console.log(location.state.from);
             const destination = location.state.from || '/';
             navigator(destination)
@@ -41,6 +47,7 @@ const useFirebase = () =>{
         createUserWithEmailAndPassword(auth, user.email, user.password)
         .then( result => {
             setUser(result.user)
+            userDatabase(user.email , user.name , 'POST')
             updateProfile(auth.currentUser, {
                 displayName: user.name})
                 .then(() => {
@@ -56,10 +63,30 @@ const useFirebase = () =>{
         })
     }
 
+
+    useEffect(() => {
+        fetch(`https://powerful-oasis-75511.herokuapp.com/users/${user?.email}`)
+        .then(res => res.json())
+        .then(data => setAdmin(data))
+
+        .catch(error => {
+            console.log('admin error')
+        })
+      }, [user?.email])
+
+
+
+
+
+
     const loginUser = ({email,password,location,navigator} ) =>{
         signInWithEmailAndPassword( auth, email, password )
         .then( result => {
             setUser(result.user)
+            // userDatabase(email)
+            // const destination = location.state.from || '/';
+            // navigator(destination)
+
             // const destination = location.state.from || '/';
             // navigator(destination)
             setModal(true)
@@ -77,9 +104,26 @@ const useFirebase = () =>{
           });
     }
 
+    const userDatabase = (email, displayName , method) => {
+        const user = {email, displayName}
+        fetch('https://powerful-oasis-75511.herokuapp.com/users', {
+          method: method,
+          headers:{
+            'content-type' : 'application/json'
+          },
+          body:JSON.stringify(user)
+        })
+        .then()
+  
+      }
+
+
+
+
     return {
         user,
         authError,
+        admin,
         googleSignIn,
         registerUser,
         loginUser,
