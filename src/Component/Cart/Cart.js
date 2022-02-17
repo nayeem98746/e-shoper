@@ -13,7 +13,10 @@ const Cart = () => {
     const dispatch = useDispatch()
     useEffect( ()=>{
         dispatch(setCartPrice())
-    },[cartProducts])
+    },[cartProducts]) 
+    
+    console.log(cartPrice)
+    console.log(cartProducts);
     
     return (
         <Container className="my-3">
@@ -38,7 +41,7 @@ const Cart = () => {
             </div>
             <hr/>
             {
-                cartProducts.map( pd =><SingleCartProduct key={pd.id} product={pd}/>)
+                cartProducts.map( pd =><SingleCartProduct key={pd._id} product={pd}/>)
             }
             <div className='subtotal-box my-4'>
                 <div className="go-back">

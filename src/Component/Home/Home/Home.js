@@ -1,8 +1,6 @@
 import React from 'react';
-import Checkout from '../../Checkout/Checkout';
-import Success from '../../Success/Success';
+import Testimonoals from '../../Testimonoals/Testimonoals';
 import Navber from '../Shared/Navber/Navber';
-
 import CategoryBanner from './CategoryBanner/CategoryBanner';
 import Footer from './Footer/Footer';
 import ItemContainer from './ItemContainer/ItemContainer';
@@ -16,8 +14,7 @@ function Home() {
       <TopBanner/>
       <CategoryBanner/>
       <ItemContainer/>
-    {/* <Checkout></Checkout> */}
-      {/* <Success></Success> */}
+      <Testimonoals></Testimonoals>
       <Footer />
     </div>
   );

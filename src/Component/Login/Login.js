@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import {  NavLink, } from 'react-bootstrap';
+import {  Button, Modal, NavLink, } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, useNavigate } from 'react-router-dom';
 import google from '../../Images/google.png'
 import './Login.css'
 import { useLocation } from 'react-router-dom';
-import useAuth from '../../hook/useAuth';
+import useAuth from '../../hook/UseAuth';
 
 function Login() {
     const [loginFromData ,  setLoginFromData] = useState({})
-    const { user, googleSignIn, loginUser } = useAuth()
+    const { user, googleSignIn, loginUser, modal, setModal } = useAuth()
     const location = useLocation();
     const navigator = useNavigate();
 
@@ -29,6 +29,17 @@ function Login() {
     const googleIcon = <FontAwesomeIcon icon="fa-solid fa-g" />
 
     return <div className='main-from'>
+              <Modal show={modal}>
+        <Modal.Header>
+          <Modal.Title>Login Successful !</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Hello Mr./Ms. {user?.displayName} You have successfully logged in !</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={ ()=>setModal(false)}>
+            <Link style={{color:'white',textDecoration:'none'}} to="/">Go To Home</Link>
+          </Button>
+        </Modal.Footer>
+      </Modal>
         <form className="form" onSubmit={handleLoginSubmit} >
             <div className='form-inner'>
                 <h2>Login</h2>

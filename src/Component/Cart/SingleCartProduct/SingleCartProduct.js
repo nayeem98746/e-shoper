@@ -5,7 +5,7 @@ import { decreaseProductQuantity, deleteFromCart, increaseProductQuantity } from
 import './singleCartProduct.css'
 
 const SingleCartProduct = ({product}) => {
-    const {name, image, price, quantity} = product;
+    const {name, img, price, quantity} = product;
     const dispatch = useDispatch();
     let disable = true;
     if(quantity>1){
@@ -15,7 +15,7 @@ const SingleCartProduct = ({product}) => {
         <Container className="mb-2">
             <div className="cart-product-container">
                 <div className="product-name">
-                    <img style={{width:'100px',height:'100px'}} src={image} alt="" />
+                    <img style={{width:'100px',height:'100px'}} src={img} alt="" />
                     <b>{name}</b>
                 </div>
                 <div className="product-info">
