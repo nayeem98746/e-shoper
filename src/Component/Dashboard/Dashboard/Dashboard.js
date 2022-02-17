@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faShoppingCart, faUserCircle, faHome , faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { Link, Outlet } from 'react-router-dom';
 import './Dashboard.css'
-import useAuth from '../../../hook/UseAuth';
+import useAuth from '../../../hook/useAuth';
 
 import { Button } from 'react-bootstrap';
 
