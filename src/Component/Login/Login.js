@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import google from '../../Images/google.png'
 import './Login.css'
 import { useLocation } from 'react-router-dom';
-import useAuth from '../../hook/useAuth';
+import useAuth from '../../Hook/useAuth';
 
 function Login() {
     const [loginFromData ,  setLoginFromData] = useState({})

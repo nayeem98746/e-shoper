@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Register.css'
-import useAuth from '../../hook/useAuth';
+import useAuth from '../../Hook/useAuth';
 
 function Register() {
     const [registerFromData ,  setRegisterFromData] = useState({})
