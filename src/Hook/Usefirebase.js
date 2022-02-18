@@ -28,15 +28,11 @@ const useFirebase = () =>{
         })
     },[])
 
-    const googleSignIn = (location,navigator) =>{
+    const googleSignIn = () =>{
         signInWithPopup(auth,provider)
         .then( result =>{
             setUser(result.user)
-            userDatabase(user.email, user.displayName, 'PUT')
-
-            console.log(location.state.from);
-            const destination = location.state.from || '/';
-            navigator(destination)
+            userDatabase(result.user.email, result.user.displayName, 'PUT')           
         })
         .catch( error =>{
             setAuthError(error.message)
@@ -99,7 +95,7 @@ const useFirebase = () =>{
     }
 
     const userDatabase = (email, displayName , method) => {
-        const user = {email, displayName}
+        const user = {email, displayName, admin:false}
         fetch('https://powerful-oasis-75511.herokuapp.com/users', {
           method: method,
           headers:{

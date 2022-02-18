@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faShoppingCart, faUserCircle  } from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from 'react-redux';
 import { HashLink } from 'react-router-hash-link';
-import useAuth from '../../../../hook/useAuth';
+import useAuth from '../../../../hook/UseAuth';
 
 function Navber() {
   const element = <FontAwesomeIcon icon={faShoppingCart} />
