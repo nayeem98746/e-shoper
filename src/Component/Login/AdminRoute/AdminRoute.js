@@ -7,8 +7,6 @@ const AdminRoute = ({children}) => {
     const {user , isLoading, admin} = useAuth() 
     console.log(admin)
     const location = useLocation();
-  
-    
     
     if(isLoading){
         return <h2>Loading</h2>
