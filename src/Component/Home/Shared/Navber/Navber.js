@@ -15,7 +15,6 @@ function Navber() {
   const cartLength = useSelector( state => state.products.cartProduct)
   const { user, logOut } = useAuth()
 
-
   return <>
     <Navbar bg="light" variant="light" sticky="top" collapseOnSelect expand="lg">
       <Container>

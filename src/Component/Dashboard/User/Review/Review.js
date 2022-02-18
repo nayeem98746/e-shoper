@@ -19,9 +19,8 @@ function Review() {
           body: JSON.stringify(data),
         },[])
           .then((res) => res.json())
-          .then((result) => console.log(result));
+          .then((result) => (result));
        
-        console.log(data)
       };
   return <div className="review-container"> 
     <h1 className='text-success my-4'>Please Give Your Feedbacks !</h1>
