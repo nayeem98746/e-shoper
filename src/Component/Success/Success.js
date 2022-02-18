@@ -16,7 +16,9 @@ const Success = () => {
             <div className="content">
                <h1>Payment Success !</h1>
                <p>Your Payment Successfully Done.your order now ready to delivery. </p>
+               <div className="backto-home-button-container">
                <NavLink as={Link} to='/home'  >Back to Home</NavLink>
+               </div>
             </div>
             
          </div>

@@ -1,82 +1,51 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {  faShoppingCart, faUserCircle, faHome , faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import {  faHome , faSignOutAlt, faCartPlus, faComment, faUserAlt } from '@fortawesome/free-solid-svg-icons';
 import { Link, Outlet } from 'react-router-dom';
 import './Dashboard.css'
 import useAuth from '../../../hook/useAuth';
-
-import { Button } from 'react-bootstrap';
+import { Button, Nav, Tab } from 'react-bootstrap';
 
 function Dashboard(props) {
-    const {window} = props
-    const [mobileOpen, setMobileOpen] = React.useState(false)
-    const {admin} = useAuth()
-    const handleSrawerToggle = () => {
-        setMobileOpen(!mobileOpen)
-    }
-
-
-
 
     const home  = <FontAwesomeIcon icon={faHome} />
+    const cartIcon  = <FontAwesomeIcon icon={faCartPlus} />
+    const review  = <FontAwesomeIcon icon={faComment} />
+    const userIcon  = <FontAwesomeIcon icon={faUserAlt} />
     const singout  = <FontAwesomeIcon icon={faSignOutAlt} />
-    const { user, logOut } = useAuth();
+    const { logOut } = useAuth();
 
+  return(<>
+          <div className='dashboard-menu-container'>
+                <Tab.Container defaultActiveKey="third">
+                <div className='sidebar-container'>
+                <Nav variant="pills" className="flex-column dashboard-nav-links">
+                  <Nav.Item className=''>
+                  
 
-
-
-    const rootElement = document.getElementById("root");
-
-
-  return <div className='row'>
-      <div className='col-md-3 col-lg-3'>
-        <div className='sidebar-container'>
-         
-            <ul className='text-center text '>
-                <li>
-                    <Link to='/home' className='dashboard-menu' >
-                        <span className='logo-style' >{home}</span>
-                        Home</Link>
-                </li>
-                <li>
-                    <Link  to={`/dashboard/addadmin`} className='dashboard-menu' >
-                    
-                    <span className='logo-style' >{home}</span>
-                        Admin</Link>
-                </li>
-                <li>
-                    <Link  to={`/dashboard/addproduct`} className='dashboard-menu' >
-                    <span className='logo-style' >{home}</span>
-                        addProduct</Link>
-                </li>
-               
-                <li>
-                    <Link to={`/dashboard/review`} className='dashboard-menu' >
-                    <span className='logo-style' >{home}</span>
-                        Review</Link>
-                </li>
-                <li>
-                    {/* <Link className='dashboard-menu' > */}
-                    <span className='logo-style' >{singout}</span>
-                       <Button onClick={logOut}>LogOut</Button>
-                       {/* </Link> */}
-                </li>
+                    <Nav.Link>
+                      <Link  to={`/`} className='dashboard-menu' ><span className='logo-style' >{home}</span>Home</Link> 
+                    </Nav.Link>
+                    <Nav.Link eventKey="third">
+                      <Link  to={`/dashboard/review`} className='dashboard-menu' ><span className='logo-style' >{review}</span>Review</Link>
+                    </Nav.Link>
+                      <Nav.Link eventKey="first"><Link  to={`/dashboard/addadmin`} className='dashboard-menu' ><span className='logo-style' >{userIcon}</span> Admin</Link>
+                    </Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link eventKey="second"><Link  to={`/dashboard/addproduct`} className='dashboard-menu' ><span className='logo-style' >{cartIcon}</span>Add-Product</Link>
+                  </Nav.Link>
+                    <Button onClick={logOut} variant="danger" className="m-3">{singout}LogOut</Button>
+                  </Nav.Item>
+                </Nav>
+                </div>
                 
-               
-              
-            
-                
-                 
-                
-            </ul>
-        </div>
-      </div>
-      <div className='col-md-9 col-lg-9'>
-        <Outlet></Outlet>
-
-
-      </div>
-  </div>;
+              <div className='border'>
+                <Outlet></Outlet>
+              </div>
+                </Tab.Container>
+          </div>;
+</>)
 }
 
 export default Dashboard;
