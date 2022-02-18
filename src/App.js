@@ -36,6 +36,7 @@ function App() {
         <Route path="/allproducts" element={<AllProducts></AllProducts>} />
         <Route path="/dashboard" element={<PrivateRoute><Dashboard/></PrivateRoute>}> 
 
+          <Route path={`/dashboard`} element={<Review></Review>} />
           <Route path={`/dashboard/review`} element={<Review></Review>} />
           <Route path={`/dashboard/addadmin`} element={<AdminRoute><AddAdmin></AddAdmin></AdminRoute>} />
           <Route path={`/dashboard/addproduct`} element={<AdminRoute><AddProduct></AddProduct></AdminRoute>} />

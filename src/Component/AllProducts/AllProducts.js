@@ -12,7 +12,6 @@ const AllProducts = () => {
         fetch('https://powerful-oasis-75511.herokuapp.com/products')
         .then(res => res.json())
         .then( data =>  setAllproducts(data))
-        // .then( data =>  console.log(data))
     }, [] )
     return (
         

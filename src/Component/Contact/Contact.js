@@ -1,6 +1,7 @@
 import React from 'react';
 import emailjs from '@emailjs/browser';
 import './contact.css'
+import Navber from '../Home/Shared/Navber/Navber';
 
 const Contact = () => {
 
@@ -19,6 +20,8 @@ const Contact = () => {
     }
 
     return (
+        <>
+            <Navber/>
         <div className="container my-5">
             <div className="main-container">
                 <div className="input-container p-5 shadow">
@@ -102,6 +105,8 @@ const Contact = () => {
 
             </div>
         </div>
+        </>
+        
     );
 };
 

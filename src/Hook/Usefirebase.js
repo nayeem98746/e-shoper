@@ -11,7 +11,6 @@ const useFirebase = () =>{
     const [ user, setUser ] = useState(null)
     const [ modal, setModal ] = useState(false)
     const [ authError, setAuthError ] = useState('');
-
     const [ isLoading, setIsLoading ] = useState(true)
     const [admin, setAdmin] = useState(false)
 
@@ -74,11 +73,6 @@ const useFirebase = () =>{
         })
       }, [user?.email])
 
-
-
-
-
-
     const loginUser = ({email,password,location,navigator} ) =>{
         signInWithEmailAndPassword( auth, email, password )
         .then( result => {
@@ -116,9 +110,6 @@ const useFirebase = () =>{
         .then()
   
       }
-
-
-
 
     return {
         user,
