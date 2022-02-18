@@ -29,13 +29,13 @@ const handleAdmin = e => {
   
    
   return (
-    <div>
+    <div className="make-admin-container">
            <form className='from-main' onSubmit={handleAdmin} >
            <h2 className='text-style' ><i><u>Please Add Admin</u></i></h2> <br/>
 
       {/* <input className='name-input' {...register("firstName")} required placeholder='Your-Name' /><br/><br/> */}
-      <input className='name-input' {...register("email")} type='email' required placeholder='Your-Email' onBlur={handleOnBlur}  /><br/><br/>
-      <input className='submit' type="submit" />
+      <input className='name-input' {...register("email")} type='email' required placeholder='Enter-Email' onBlur={handleOnBlur}  /><br/><br/>
+      <input className='submit' type="submit" value="Make Admin" />
     </form>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import useAuth from '../../../../hook/UseAuth';
+import useAuth from '../../../../hook/useAuth';
 import './Review.css'
 
 function Review() {
@@ -23,9 +23,11 @@ function Review() {
        
         console.log(data)
       };
-  return <div>   <form onSubmit={handleSubmit(onSubmit)}>
+  return <div className="review-container"> 
+    <h1 className='text-success my-4'>Please Give Your Feedbacks !</h1>
+  <form onSubmit={handleSubmit(onSubmit)} className='shadow p-4'>
   <input
-    className="input-apply"
+    className="input-apply my-0"
     name="name"
     defaultValue="Name"
     {...register("name")}

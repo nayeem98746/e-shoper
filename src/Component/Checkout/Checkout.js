@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import img1 from '../../Images/SSLCommerz.png';
 import useAuth from '../../hook/useAuth';
 import { useSelector } from 'react-redux';
+import Navber from '../Home/Shared/Navber/Navber';
 
 const Checkout = ({}) => {
   const { register, handleSubmit } = useForm();
@@ -19,7 +20,7 @@ console.log(cartPrice)
         cus_email:user?.email,
         product_name:cartProduct[0].name,
         product_image:cartProduct[0].image,
-         total_amount:cartPrice
+        total_amount:cartPrice
 
     }
     console.log(order)
@@ -39,6 +40,8 @@ console.log(cartPrice)
   
  
     return (
+      <>
+        <Navber/>
         <div className="container p-4">
            
             <h2 className="text-warning">Checkout</h2>
@@ -119,6 +122,7 @@ console.log(cartPrice)
                 
             </div>
             </div>
+      </>   
            
     );
 };

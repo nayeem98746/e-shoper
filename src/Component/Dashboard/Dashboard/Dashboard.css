@@ -5,15 +5,24 @@
     
 }
 .dashboard-menu:hover{
-    color:#ffd100 ;
+    color:#ffd100;
 }
 .text li{
     padding-bottom: 20px;
 }
 .sidebar-container{
     background-color: #323a3e;
-    padding-bottom: 200px;
+    padding: 20px 10px;
 }
 .logo-style{
     color: #ffd100;
+    margin-right: 10px;
+}
+.dashboard-nav-links a{
+    color: rgb(255, 255, 255);
+}
+.dashboard-menu-container{
+    display: grid;
+    grid-template-columns: 200px auto;
+    height: 100vh;
 }

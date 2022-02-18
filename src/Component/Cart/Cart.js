@@ -15,9 +15,6 @@ const Cart = () => {
         dispatch(setCartPrice())
     },[cartProducts]) 
     
-    console.log(cartPrice)
-    console.log(cartProducts);
-    
     return (
         <Container className="my-3">
             <h3 className='text-center'>Shopping Cart</h3>
