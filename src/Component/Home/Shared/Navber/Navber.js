@@ -24,7 +24,6 @@ function Navber() {
 
           <Nav.Link className='link-style ms-auto' as={Link} to="/home"><h6 >Home</h6></Nav.Link>
           <HashLink className='link-style' style={{textDecoration:'none'}} smooth to="/#shop-container"><h6>Shop</h6></HashLink>
-          <Nav.Link className='link-style' as={Link} to="/"><h6>Blog</h6></Nav.Link>
           <Nav.Link className='link-style' as={Link} to="/allproducts"><h6>Products</h6></Nav.Link>
           <Nav.Link className='link-style' as={Link} to="/dashboard"><h6>Dashboard</h6></Nav.Link>
           <Nav.Link className='link-style' as={Link} to="/contact"><h6>Contact Us</h6></Nav.Link>

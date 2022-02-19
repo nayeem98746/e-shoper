@@ -7,6 +7,7 @@ function Review() {
     const {
         register,
         handleSubmit,
+        reset,
         watch,
         formState: { errors },
       } = useForm();
@@ -19,16 +20,21 @@ function Review() {
           body: JSON.stringify(data),
         },[])
           .then((res) => res.json())
-          .then((result) => (result));
+          .then((result) => {
+            if(result.acknowledged){
+              reset()
+              alert('Thanks for successfully giving your feedback !')
+            }
+          });
        
       };
   return <div className="review-container"> 
-    <h1 className='text-success my-4'>Please Give Your Feedbacks !</h1>
+    <h1 className='text-success my-4'>Please Give Your Feedback !</h1>
   <form onSubmit={handleSubmit(onSubmit)} className='shadow p-4'>
   <input
     className="input-apply my-0"
     name="name"
-    defaultValue="Name"
+    defaultValue={user.displayName}
     {...register("name")}
   />
   <br />
@@ -36,7 +42,7 @@ function Review() {
     className="input-apply"
     type="email"
     name="email"
-    defaultValue="email"
+    defaultValue={user.email}
     {...register("email")}
   />
   <br />
