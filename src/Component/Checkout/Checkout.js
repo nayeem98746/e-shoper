@@ -24,7 +24,7 @@ console.log(cartPrice)
 
     }
     console.log(order)
-  fetch(`http://localhost:8000/init`,{
+  fetch(`https://powerful-oasis-75511.herokuapp.com/init`,{
     method:"POST",
     headers:{
       "content-type":"application/json"

@@ -18,7 +18,6 @@ const AllProducts = () => {
         <div className='row'>
             <Navber></Navber>
             
-            <h2>Our Products</h2>
             <div className='product-container' >
                 {
                     allproducts.map(allproduct => <AllProduct
