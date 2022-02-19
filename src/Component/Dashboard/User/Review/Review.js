@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import useAuth from '../../../../hook/useAuth';
+import useAuth from '../../../../Hook/UseAuth';
 import './Review.css'
 
 function Review() {
