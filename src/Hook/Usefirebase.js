@@ -41,11 +41,12 @@ const useFirebase = () =>{
         createUserWithEmailAndPassword(auth, user.email, user.password)
         .then( result => {
             setUser(result.user)
-            userDatabase(user.email , user.name , 'POST')
+            
             updateProfile(auth.currentUser, {
                 displayName: user.name})
                 .then(() => {
-
+                    
+                userDatabase(user.email , user.name , 'POST')
                 setModal(true)
                 
               }).catch((error) => {

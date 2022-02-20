@@ -5,7 +5,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import google from '../../Images/google.png'
 import './Login.css'
 import { useLocation } from 'react-router-dom';
-import useAuth from '../../Hook/UseAuth';
+import useAuth from '../../hook/useAuth';
+import Navber from '../Home/Shared/Navber/Navber';
 
 function Login() {
     const [loginFromData ,  setLoginFromData] = useState({})
@@ -28,7 +29,9 @@ function Login() {
     // const element = <FontAwesomeIcon icon={fagoogle} />
     const googleIcon = <FontAwesomeIcon icon="fa-solid fa-g" />
 
-    return <div className='main-from'>
+    return <>
+    <Navber/>
+    <div className='main-from'>
               <Modal show={modal}>
         <Modal.Header>
           <Modal.Title>Login Successful !</Modal.Title>
@@ -71,7 +74,8 @@ function Login() {
                 
             </div>
         </form>
-    </div>;
+    </div>
+    </>;
 }
 
 export default Login;
