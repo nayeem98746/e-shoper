@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faHome , faSignOutAlt, faCartPlus, faComment, faUserAlt } from '@fortawesome/free-solid-svg-icons';
 import { Link, Outlet } from 'react-router-dom';
 import './Dashboard.css'
-import useAuth from '../../../Hook/UseAuth';
+import useAuth from '../../../hook/UseAuth';
 import { Button, Nav, Tab } from 'react-bootstrap';
 
 function Dashboard(props) {
