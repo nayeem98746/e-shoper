@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { setCartPrice } from '../../features/counter/counterSlice';
-import useAuth from '../../hook/useAuth';
+import useAuth from '../../Hook/UseAuth';
 import './cart.css'
 import SingleCartProduct from './SingleCartProduct/SingleCartProduct';
 
