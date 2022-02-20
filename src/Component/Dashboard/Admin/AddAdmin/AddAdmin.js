@@ -5,7 +5,7 @@ import './AddAdmin.css'
 const AddAdmin = () => {
   const [email, setEmail] = useState('')
 
-  const { register, handleSubmit } = useForm();
+  const { register } = useForm();
   const handleOnBlur = e => {
     setEmail(e.target.value)
 }
@@ -16,7 +16,7 @@ const handleAdmin = e => {
   fetch('https://powerful-oasis-75511.herokuapp.com/users/admin', {
       method:'PUT',
       headers:{
-       'content-type' : 'application/json'
+       'content-type':'application/json'
       },
       body: JSON.stringify(user)
   })
@@ -26,17 +26,14 @@ const handleAdmin = e => {
   })
   e.preventDefault()
 }
-  
    
   return (
     <div className="make-admin-container">
-           <form className='from-main' onSubmit={handleAdmin} >
-           <h2 className='text-style' ><i><u>Please Add Admin</u></i></h2> <br/>
-
-      {/* <input className='name-input' {...register("firstName")} required placeholder='Your-Name' /><br/><br/> */}
-      <input className='name-input' {...register("email")} type='email' required placeholder='Enter-Email' onBlur={handleOnBlur}  /><br/><br/>
-      <input className='submit' type="submit" value="Make Admin" />
-    </form>
+        <form className='from-main' onSubmit={handleAdmin} >
+            <h2 className='text-style' ><i><u>Please Add Admin</u></i></h2> <br/>
+            <input className='name-input' {...register("email")} type='email' required placeholder='Enter-Email' onBlur={handleOnBlur}  /><br/><br/>
+            <input className='submit' type="submit" value="Make Admin" />
+        </form>
     </div>
   );
 };

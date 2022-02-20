@@ -6,7 +6,6 @@ import Home from './Component/Home/Home/Home';
 import Login from './Component/Login/Login';
 import Register from './Component/Register/Register';
 import Cart from './Component/Cart/Cart';
-import Checkout from './Component/Checkout/Checkout';
 import Success from './Component/Success/Success';
 import AuthProvider from './context/authProvider';
 import PrivateRoute from './Component/PrivateRoute';
@@ -30,7 +29,6 @@ function App() {
         <Route path="/register" element={<Register></Register>} />       
         <Route path="/cart" element={<Cart></Cart>} />
         <Route path="/contact" element={<Contact></Contact>} />
-        <Route path="/checkout" element={<PrivateRoute> <Checkout></Checkout> </PrivateRoute>} />       
         <Route path="/success" element={<PrivateRoute> <Success></Success> </PrivateRoute>} />       
         <Route path="/dashboard" element={<PrivateRoute> <Dashboard></Dashboard> </PrivateRoute>} />       
         <Route path="/allproducts" element={<AllProducts></AllProducts>} />

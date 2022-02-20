@@ -4,16 +4,41 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { setCartPrice } from '../../features/counter/counterSlice';
+import useAuth from '../../hook/useAuth';
 import './cart.css'
 import SingleCartProduct from './SingleCartProduct/SingleCartProduct';
 
 const Cart = () => {
     const cartProducts = useSelector(state=> state.products.cartProduct);
     const cartPrice = useSelector(state=> state.products.cartPrice);
+    const cartProduct = useSelector(state=>state.products.cartProduct)
+    const  {user} = useAuth()
     const dispatch = useDispatch()
     useEffect( ()=>{
         dispatch(setCartPrice())
     },[cartProducts]) 
+
+    const purchase=()=>{
+        const order ={
+            cus_name:user?.displayName,
+            cus_email:user?.email,
+            product_name:cartProduct[0].name,
+            product_image:cartProduct[0].image,
+            total_amount:cartPrice
+    
+        }
+      fetch(`https://powerful-oasis-75511.herokuapp.com/init`,{
+        method:"POST",
+        headers:{
+          "content-type":"application/json"
+        },
+        body:JSON.stringify(order)
+      })
+      .then(res=>res.json())
+      .then(data=>{
+        window.location.replace(data);
+      })
+      }
     
     return (
         <Container className="my-3">
@@ -47,7 +72,7 @@ const Cart = () => {
                 <div className="subtotal text-center">
                     <h5>Subtotal:</h5>
                     <h3>${cartPrice}.00</h3>
-                    <NavLink to="/checkout"><Button className="px-5">Checkout</Button></NavLink>
+                    <Button onClick={ purchase } className="px-5">Pay</Button>
                 </div>
             </div></>
             }

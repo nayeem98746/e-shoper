@@ -2,7 +2,7 @@ import './Checkout.css';
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import img1 from '../../Images/SSLCommerz.png';
-import useAuth from '../../hook/UseAuth';
+import useAuth from '../../Hook/UseAuth';
 import { useSelector } from 'react-redux';
 import Navber from '../Home/Shared/Navber/Navber';
 
@@ -24,7 +24,7 @@ console.log(cartPrice)
 
     }
     console.log(order)
-  fetch(`http://localhost:8000/init`,{
+  fetch(`https://powerful-oasis-75511.herokuapp.com/init`,{
     method:"POST",
     headers:{
       "content-type":"application/json"
