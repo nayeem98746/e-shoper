@@ -2,7 +2,7 @@ import './Checkout.css';
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import img1 from '../../Images/SSLCommerz.png';
-import useAuth from '../../hook/useAuth';
+import useAuth from '../../Hook/UseAuth';
 import { useSelector } from 'react-redux';
 import Navber from '../Home/Shared/Navber/Navber';
 
