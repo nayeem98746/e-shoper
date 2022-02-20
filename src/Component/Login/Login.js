@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import google from '../../Images/google.png'
 import './Login.css'
 import { useLocation } from 'react-router-dom';
-import useAuth from '../../hook/useAuth';
+import useAuth from '../../hook/UseAuth';
 import Navber from '../Home/Shared/Navber/Navber';
 
 function Login() {
