@@ -13,7 +13,7 @@ function Review() {
 
       const {user} = useAuth()
       const onSubmit = (data) => {
-        fetch("https://powerful-oasis-75511.herokuapp.com/addReview", {
+        fetch("https://morning-temple-60251.herokuapp.com/addReview", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(data),

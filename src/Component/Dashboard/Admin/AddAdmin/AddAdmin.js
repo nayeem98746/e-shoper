@@ -13,7 +13,7 @@ const AddAdmin = () => {
 
 const handleAdmin = e => {
   const user = {email}
-  fetch('https://powerful-oasis-75511.herokuapp.com/users/admin', {
+  fetch('https://morning-temple-60251.herokuapp.com/users/admin', {
       method:'PUT',
       headers:{
        'content-type' : 'application/json'

@@ -8,7 +8,7 @@ const AddProduct = () => {
     const {register, handleSubmit, reset} = useForm()
 
     const onSubmit = data => {
-        axios.post('https://powerful-oasis-75511.herokuapp.com/products' , data)
+        axios.post('https://morning-temple-60251.herokuapp.com/products' , data)
         .then(res => {
             console.log(res)
             if(res.data.insertedId){

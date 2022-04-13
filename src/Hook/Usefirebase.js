@@ -60,7 +60,7 @@ const useFirebase = () =>{
 
 
     useEffect(() => {
-        fetch(`https://powerful-oasis-75511.herokuapp.com/users/${user?.email}`)
+        fetch(`https://morning-temple-60251.herokuapp.com/users/${user?.email}`)
         .then(res => res.json())
         .then(data => setAdmin(data))
 
@@ -96,7 +96,7 @@ const useFirebase = () =>{
 
     const userDatabase = (email, displayName , method) => {
         const user = {email, displayName, admin:false}
-        fetch('https://powerful-oasis-75511.herokuapp.com/users', {
+        fetch('https://morning-temple-60251.herokuapp.com/users', {
           method: method,
           headers:{
             'content-type' : 'application/json'

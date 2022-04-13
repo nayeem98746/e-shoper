@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 export const fetchProduct = createAsyncThunk(
   'allProducts/fetchAllProducts',
   async()=>{
-    const response = await fetch('https://powerful-oasis-75511.herokuapp.com/products')
+    const response = await fetch('https://morning-temple-60251.herokuapp.com/products')
     .then( res => res.json())
     return response;
   }
