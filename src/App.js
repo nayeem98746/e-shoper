@@ -34,6 +34,7 @@ function App() {
         <Route path="/success" element={<PrivateRoute> <Success></Success> </PrivateRoute>} />       
         <Route path="/dashboard" element={<PrivateRoute> <Dashboard></Dashboard> </PrivateRoute>} />       
         <Route path="/allproducts" element={<AllProducts></AllProducts>} />
+        
         <Route path="/dashboard" element={<PrivateRoute><Dashboard/></PrivateRoute>}> 
 
           <Route path={`/dashboard`} element={<Review></Review>} />

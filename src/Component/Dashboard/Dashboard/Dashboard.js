@@ -8,11 +8,11 @@ import { Button, Nav, Tab } from 'react-bootstrap';
 
 function Dashboard(props) {
 
-    const home  = <FontAwesomeIcon icon={faHome} />
+  const home  = <FontAwesomeIcon icon={faHome} />
     const cartIcon  = <FontAwesomeIcon icon={faCartPlus} />
     const review  = <FontAwesomeIcon icon={faComment} />
     const userIcon  = <FontAwesomeIcon icon={faUserAlt} />
-    const singout  = <FontAwesomeIcon icon={faSignOutAlt} />
+    const singout  = <FontAwesomeIcon icon={faSignOutAlt} />  
     const { logOut } = useAuth();
 
   return(<>
