@@ -8,6 +8,7 @@ const AllProduct = ({allproduct}) => {
     const { name, price, img,} = allproduct;
     const dispatch = useDispatch()
     // console.log(allproduct);
+    // 
     return (
         <div>
             <div className='card-main'>
