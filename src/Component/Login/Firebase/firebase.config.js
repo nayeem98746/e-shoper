@@ -1,10 +1,10 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyAwtqprJb3Tk0vMFOAl1YFRbqhQ7O2R78M",
-  authDomain: "phero-team-projects.firebaseapp.com",
-  projectId: "phero-team-projects",
-  storageBucket: "phero-team-projects.appspot.com",
-  messagingSenderId: "601105521669",
-  appId: "1:601105521669:web:1b7c5228fe76479a5a506c"
+  apiKey: "AIzaSyBqVpqFlIl6U-4CeVg3JsO0J0KiUOSCAhQ",
+  authDomain: "e-shoper-238fa.firebaseapp.com",
+  projectId: "e-shoper-238fa",
+  storageBucket: "e-shoper-238fa.appspot.com",
+  messagingSenderId: "778159246333",
+  appId: "1:778159246333:web:c7292e632f1aebb793e794"
 };
 
 export default firebaseConfig;
